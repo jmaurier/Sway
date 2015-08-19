@@ -7,7 +7,7 @@ angular.module('app', ['ngRoute','toastr'])
 
   $scope.logout = function(){
   	delete($scope.currentUser) 
-    $location.path('/')
+    $location.path('/login')
     window.sessionStorage.removeItem('token')
   }
 

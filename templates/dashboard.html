@@ -1,2 +1,19 @@
-<h1>Home Page index son!</h1>
+<form ng-submit="createNewTimeSheet(title)">
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" type="name" ng-model="title" required>
+  </div>
+  <input class="btn btn-success btn-lg btn-block" type="submit" value="Create">
+</form>
 
+<h1>Recent Timesheets</h1>
+<ul class='list-group' ng-if='currentUser' >
+  <li ng-watch="timesheets" ng-repeat="timesheet in timesheets | orderBy:'-date'" class='list-group-item'>
+    <div class="row">
+        <div class="col-md-11">
+            <a ng-href='/#'><strong>{{ timesheet.title }}</strong></a>
+            <br>
+        </div>
+    </div>
+  </li>
+</ul>

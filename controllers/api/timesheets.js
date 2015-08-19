@@ -4,14 +4,23 @@ var TimeSheet  = require('../../models/timesheet')
 var config = require('../../config')
 
 //Get timesheets for a specific user.
-router.get('/timesheets/:userid', function (req, res, next) {
-  TimeSheet.findOne({ 'user_id': req.params.userid}, function(err, timesheet) {
+router.get('/timesheets', function (req, res, next) {
+  User.findOne({ 'H_number': req.auth.H_number}, function(err, user){
     if (err) return next(err);
-    if(timesheet == null) {
-      res.status(404).json({message: 'Time sheet not found.'});
-    } else {
-      res.json(timesheet)
-    }
+      if(user == null) {
+        console.log("no user");
+        res.status(404).json({message: 'User not found.'});
+      } else {
+          TimeSheet.find({ 'user_id': user._id}, function(err, timesheet) {
+            if (err) return next(err);
+            if(timesheet == null) {
+              console.log("no timesheet");
+              res.status(404).json({message: 'Time sheet not found.'});
+            } else {
+              res.json(timesheet)
+            }
+          })
+      }
   })
 })
 
@@ -31,6 +40,7 @@ router.post('/timesheets', function (req, res, next) {
           })
         timesheet.save(function(err, time_sheet){
           if (err) return next(err);
+          console.log("timesheet created");
           res.status(201).json(time_sheet)
         })
       }
