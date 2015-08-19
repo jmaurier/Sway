@@ -24,6 +24,19 @@ router.get('/timesheets', function (req, res, next) {
   })
 })
 
+//get a specific timesheet by id
+router.get('/timesheets/:id', function (req, res, next) {
+  TimeSheet.findById(req.params.id, function(err, timesheet) {
+    if (err) return next(err);
+    if(timesheet == null) {
+      console.log("no timesheet");
+      res.status(404).json({message: 'Time sheet not found.'});
+    } else {
+      res.json(timesheet)
+    }
+  })
+})
+
 router.post('/timesheets', function (req, res, next) {
 
   User.findOne({ 'H_number': req.auth.H_number}, function(err, user){
@@ -33,8 +46,8 @@ router.post('/timesheets', function (req, res, next) {
       } else {
           var timesheet = new TimeSheet({
             user_id: user.id,
-            start_date: req.body.start_date,
-            end_date: req.body.end_date,
+            week_one_ending: req.body.week_one_ending,
+            week_two_ending: req.body.week_two_ending,
             title: req.body.title,
             pdf: req.body.pdf
           })

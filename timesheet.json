@@ -1,0 +1,237 @@
+{
+  "account_num":{
+    "fund":"",
+    "org":"",
+    "account":"",
+    "program":""
+  },
+  "department":"",
+  "week_one": {
+    "sunday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "monday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "tuesday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "wednesday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "thursday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "friday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "saturday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    }
+  },
+  "week_two": {
+    "sunday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "monday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "tuesday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "wednesday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "thursday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "friday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    },
+    "saturday":{
+      "date": "",
+      "col_one":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_two":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "col_three":{
+        "in_time": "",
+        "out_time": ""
+      },
+      "hours_worked": ""
+    }
+  }
+}

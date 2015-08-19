@@ -5,9 +5,11 @@ angular.module('app')
 		$location.path('/login')
 	}
 
-	$scope.createNewTimeSheet = function(title){
+	$scope.createNewTimeSheet = function(title, week_one_ending, week_two_ending){
 	  TimesheetSvc.create({
-        title: title
+        title: title,
+        week_one_ending: week_one_ending,
+        week_two_ending: week_two_ending
       })
       .success(function (time_sheet) {
       	$scope.timesheets.unshift(time_sheet)
