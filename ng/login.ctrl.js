@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('LoginCtrl', function ($scope, UserSvc) {
+.controller('LoginCtrl', function ($scope, UserSvc, toastr) {
   $scope.login = function (username, password) {
   	$scope.errorMsg = '';
     UserSvc.login(username, password)
