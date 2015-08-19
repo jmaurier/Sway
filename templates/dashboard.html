@@ -1,9 +1,13 @@
-<form ng-submit="createNewTimeSheet(title)">
+<form ng-submit="createNewTimeSheet(title, week_one_ending, week_two_ending)">
   <div class="form-group">
     <label>Title</label>
     <input class="form-control" type="name" ng-model="title" required>
+    <label>Week 1 Ending</label>
+    <input type="date" ng-model="week_one_ending" />
+    <label>Week 2 Ending</label>
+    <input type="date" ng-model="week_two_ending" />
   </div>
-  <input class="btn btn-success btn-lg btn-block" type="submit" value="Create">
+  <input class="btn btn-success btn-lg btn-block" type="submit" value="Create New Timesheet">
 </form>
 
 <h1>Recent Timesheets</h1>
@@ -11,7 +15,7 @@
   <li ng-watch="timesheets" ng-repeat="timesheet in timesheets | orderBy:'-date'" class='list-group-item'>
     <div class="row">
         <div class="col-md-11">
-            <a ng-href='/#'><strong>{{ timesheet.title }}</strong></a>
+            <a ng-href='/#/timesheet/{{timesheet._id}}'><strong>{{ timesheet.title }}</strong></a>
             <br>
         </div>
     </div>
