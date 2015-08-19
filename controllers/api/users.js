@@ -9,14 +9,14 @@ router.get('/users', function (req, res, next) {
     return res.sendStatus(401)
   }
   var auth = jwt.decode(req.headers['x-auth'], config.secret)
-  User.findOne({username: auth.username}, function (err, user) {
+  User.findOne({H_number: auth.H_number}, function (err, user) {
     if (err) { return next(err) }
     res.json(user)
   })
 })
 
 router.post('/users', function (req, res, next) {
-  var user = new User({username: req.body.username})
+  var user = new User({H_number: req.body.H_number, name:req.body.name})
   bcrypt.hash(req.body.password, null, null, function (err, hash) {
     if (err) { return next(err) }
     user.password = hash

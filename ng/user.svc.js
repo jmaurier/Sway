@@ -7,20 +7,20 @@ angular.module('app')
       return response.data
     })
   }
-  svc.login = function (username, password) {
+  svc.login = function (H_number, password) {
     return $http.post('/api/sessions', {
-      username: username, password: password
+      H_number: H_number, password: password
     }).then(function (response) {
       window.sessionStorage.token = response.data
       $http.defaults.headers.common['x-auth'] = response.data
       return svc.getUser()
     })
   }
-  svc.register = function (username, password) {
+  svc.register = function (H_number, password, name) {
     return $http.post('/api/users', {
-      username: username, password: password
+      H_number: H_number, password: password, name: name
     }).then(function () {
-      return svc.login(username, password)
+      return svc.login(H_number, password, name)
     })
   }
   svc.isLoggedIn = function (){

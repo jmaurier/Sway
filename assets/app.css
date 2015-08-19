@@ -4,6 +4,9 @@ h1 {
 #askQuestionButton {
   float: right;
 }
+#logout_btn:hover {
+  cursor: pointer;
+}
 .arrow-up {
   width: 0;
   height: 0;

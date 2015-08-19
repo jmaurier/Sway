@@ -5,8 +5,8 @@ var config = require('../../config')
 var User   = require('../../models/user')
 
 router.post('/sessions', function (req, res, next) {
-  var username = req.body.username
-  User.findOne({username: username})
+  var H_number = req.body.H_number
+  User.findOne({H_number: H_number})
   .select('password')
   .exec(function (err, user) {
     if (err) { return next(err) }
@@ -18,7 +18,7 @@ router.post('/sessions', function (req, res, next) {
       if (!valid) {
        return res.sendStatus(401) 
       }
-      var token = jwt.encode({username: username}, config.secret)
+      var token = jwt.encode({H_number: H_number}, config.secret)
       res.send(token)
     })
   })

@@ -15,9 +15,9 @@
         </ul>
         <ul>
           <p ng-if='currentUser' class='navbar-text navbar-right'>
-            Signed in as {{currentUser.username}}
+            Signed in as {{currentUser.name}}
           </p>
-          <p><a ng-if='currentUser' ng-click='logout()' class='navbar-text navbar-right'>Logout</a></p>  
+          <p><a ng-if='currentUser' ng-click='logout()' id='logout_btn' class='navbar-text navbar-right'>Logout</a></p>  
         </ul>
       </div>
     </nav>
