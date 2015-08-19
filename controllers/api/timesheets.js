@@ -46,11 +46,13 @@ router.post('/timesheets', function (req, res, next) {
       } else {
           var timesheet = new TimeSheet({
             user_id: user.id,
-            week_one_ending: req.body.week_one_ending,
-            week_two_ending: req.body.week_two_ending,
+            week_beginning: req.body.week_beginning,
             title: req.body.title,
-            pdf: req.body.pdf
-          })
+          });
+          timesheet.week_one.sunday.date = req.body.week_one.sunday.date;
+          timesheet.week_one.monday.date = req.body.week_one.monday.date;
+          timesheet.week_one.tuesday.date = req.body.week_one.tuesday.date;
+
         timesheet.save(function(err, time_sheet){
           if (err) return next(err);
           console.log("timesheet created");

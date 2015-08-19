@@ -31,3 +31,11 @@ h1 {
   position: relative;
   left: 40%;
 }
+.ng-invalid {
+  border-color: #f00;
+  outline-color: #f00;
+}
+.ng-valid {
+  border-color: #008000;
+  outline-color: #008000;
+}

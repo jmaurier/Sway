@@ -1,11 +1,9 @@
-<form ng-submit="createNewTimeSheet(title, week_one_ending, week_two_ending)">
+<form ng-submit="createNewTimeSheet(title, week_beginning)">
   <div class="form-group">
     <label>Title</label>
     <input class="form-control" type="name" ng-model="title" required>
-    <label>Week 1 Ending</label>
-    <input type="date" ng-model="week_one_ending" />
-    <label>Week 2 Ending</label>
-    <input type="date" ng-model="week_two_ending" />
+    <label>Week Beginning</label>
+    <input type="date" ng-model="week_beginning" />
   </div>
   <input class="btn btn-success btn-lg btn-block" type="submit" value="Create New Timesheet">
 </form>
