@@ -15,6 +15,8 @@ angular.module('app', ['ngRoute','toastr'])
 	  	var user = UserSvc.getUser().then(function(response){
 		    $scope.currentUser = response;
 	  	})
- 	}
+ 	}else {
+    $location.path('/login')
+  }
 
 })
