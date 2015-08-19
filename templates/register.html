@@ -1,12 +1,16 @@
 <form ng-submit="register(H_number, password, name)">
   <div class="form-group">
     <label>H Number</label>
-    <input class="form-control" type="text" ng-model="H_number">
+    <input class="form-control" type="text" ng-model="H_number" required>
   </div>
   <div class="form-group">
     <label>Password</label>
     <input class="form-control" type="password" ng-model="password" required>
   </div>
+<!--   <div class="form-group">
+    <label>Confirm Password</label>
+    <input class="form-control" type="password" ng-model="password" required>
+  </div> -->
   <div class="form-group">
     <label>Name</label>
     <input class="form-control" type="name" ng-model="name" required>
