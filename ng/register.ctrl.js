@@ -4,6 +4,8 @@ angular.module('app')
     UserSvc.register(H_number, password, name)
     .then(function (user) {
       $scope.$emit('login', user)
+    }, function(error){
+      console.log(error);
     })
   }
 })

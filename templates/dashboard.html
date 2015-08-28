@@ -8,14 +8,19 @@
   <input class="btn btn-success btn-lg btn-block" type="submit" value="Create New Timesheet">
 </form>
 
-<h1>Recent Timesheets</h1>
-<ul class='list-group' ng-if='currentUser' >
-  <li ng-watch="timesheets" ng-repeat="timesheet in timesheets | orderBy:'-date'" class='list-group-item'>
-    <div class="row">
-        <div class="col-md-11">
-            <a ng-href='/#/timesheet/{{timesheet._id}}'><strong>{{ timesheet.title }}</strong></a>
-            <br>
-        </div>
+<h1>Past Timesheets</h1>
+<div class='list-group' ng-if='currentUser' >
+  <div ng-watch="timesheets" ng-repeat="timesheet in timesheets | orderBy:'-date'" class="past_timesheet_container">
+    <div class="row timesheet_row" ng-if="$even">
+          <div class="col-md-4 timesheet_small_view">
+            <a ng-href='/#/timesheet/{{timesheets[$index]._id}}'><strong>{{ timesheets[$index].title }}</strong></a>
+          </div>
+          <div class="col-md-4 timesheet_small_view">
+            <a ng-href='/#/timesheet/{{timesheets[$index + 1]._id}}'><strong>{{ timesheets[$index + 1].title }}</strong></a>
+          </div>
+          <div class="col-md-4 timesheet_small_view">
+            <a ng-href='/#/timesheet/{{timesheets[$index + 2]._id}}'><strong>{{ timesheets[$index + 2].title }}</strong></a>
+          </div>
     </div>
-  </li>
-</ul>
+  </div>
+</div>

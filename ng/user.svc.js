@@ -20,7 +20,9 @@ angular.module('app')
     return $http.post('/api/users', {
       H_number: H_number, password: password, name: name
     }).then(function () {
-      return svc.login(H_number, password, name)
+      return svc.login(H_number, password)
+    }, function(error){
+      console.log(error);
     })
   }
   svc.isLoggedIn = function (){
