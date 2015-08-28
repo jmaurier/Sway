@@ -7,29 +7,10 @@ h1 {
 #logout_btn:hover {
   cursor: pointer;
 }
-.arrow-up {
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 20px solid #999;
-}
-.arrow-up:hover {
-  border-bottom: 20px solid #f93;
-}
-.arrow-down:hover {
-  border-top: 20px solid #5c8ae6;
-}
-.arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #999;
-}
-.vote-text {
-  position: relative;
-  left: 40%;
+/*LogIn*/
+#textForm {
+  max-width: 50%;
+  margin: auto;
 }
 .ng-invalid {
   border-color: #f00;

@@ -16,11 +16,11 @@ angular.module('app')
       return svc.getUser()
     })
   }
-  svc.register = function (H_number, password, name) {
+  svc.register = function (H_number, password, name, emailaddr) {
     return $http.post('/api/users', {
-      H_number: H_number, password: password, name: name
+      H_number: H_number, password: password, name: name, emailaddr: emailaddr
     }).then(function () {
-      return svc.login(H_number, password, name)
+      return svc.login(H_number, password)
     })
   }
   svc.isLoggedIn = function (){

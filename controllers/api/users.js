@@ -16,7 +16,7 @@ router.get('/users', function (req, res, next) {
 })
 
 router.post('/users', function (req, res, next) {
-  var user = new User({H_number: req.body.H_number, name:req.body.name})
+  var user = new User({H_number: req.body.H_number, name:req.body.name, emailaddr:req.body.emailaddr})
   bcrypt.hash(req.body.password, null, null, function (err, hash) {
     if (err) { return next(err) }
     user.password = hash
