@@ -12,7 +12,7 @@ angular.module('app')
     	console.log(error);
       if (error.status == 401){
       	$scope.error = true;
-		toastr.error('This H-Number is already in use, faggot.', 'Error');
+		toastr.error('This H-Number is already in use.', 'Error');
       }
     })
   }

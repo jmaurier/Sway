@@ -9,11 +9,11 @@
   </div>
   <div class="form-group">
     <label>H Number</label>
-    <input class="form-control" type="text" ng-model="H_number" required>
+    <input class="form-control" pattern="^[H|h]\d{8}$" type="text" ng-model="H_number" required>
   </div>
   <div class="form-group">
     <label>E-Mail Address</label>
-    <input class="form-control" type="text" ng-model="emailaddr" required>
+    <input class="form-control" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" type="text" ng-model="emailaddr" required>
   </div>
   <div class="form-group">
     <label>Password</label>
