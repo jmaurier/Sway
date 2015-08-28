@@ -1,5 +1,5 @@
-angular.module('app', ['ngRoute','toastr'])
-.controller('ApplicationCtrl', function ($scope, $location, $window, UserSvc, toastr) {
+angular.module('app', ['ngRoute','toastr','angularModalService'])
+.controller('ApplicationCtrl', function ($scope, $location, $window, UserSvc, toastr, ModalService) {
   $scope.$on('login', function (_, user) {
     $scope.currentUser = user
     $location.path('/')
