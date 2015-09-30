@@ -3,10 +3,10 @@
 		<h4>{{timesheet.title}} - {{timesheet.week_beginning | date:'yyyy-MM-dd'}}</h4>
 	</div>
 	<div class="col-md-2">
-		<input class="btn btn-success btn-block" type="button" value="Clock In">
+		<input class="btn btn-success btn-block" type="button" value="Clock In" ng-click="clockin()">
 	</div>
 	<div class="col-md-2">	
-		<input class="btn btn-success btn-block" type="button" value="Clock Out">
+		<input class="btn btn-success btn-block" type="button" value="Clock Out" ng-click="clockout()">
 	</div>
 </div>
 <div class="row">
@@ -28,7 +28,7 @@
       <div class="col-xs-1 space"></div>
       <div class="col-xs-2">Sunday</div>
       <div class="col-xs-1">{{timesheet.week_one.sunday.date | date:'MM/dd'}}</div>
-      <div class="col-xs-1">{{timesheet.week_one.sunday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.sunday.col_one.in_time }}</div>
       <div class="col-xs-1">{{timesheet.week_one.sunday.col_one.out_time}}</div>
       <div class="col-xs-1">{{timesheet.week_one.sunday.col_two.in_time}}</div>
       <div class="col-xs-1">{{timesheet.week_one.sunday.col_two.out_time}}</div>
