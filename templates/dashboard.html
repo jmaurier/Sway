@@ -13,15 +13,22 @@
   <div ng-watch="timesheets" ng-repeat="timesheet in timesheets | orderBy:'-date'" class="past_timesheet_container">
     <div class="row timesheet_row" ng-if="$even">
           <div class="col-md-4 timesheet_small_view">
-            <a ng-href='/#/timesheet/{{timesheets[$index]._id}}'><strong>{{ timesheets[$index].title }}</strong></a>
+            <a ng-href='/#/timesheet/{{timesheets[$index]._id}}'><strong>{{ timesheets[$index].title}} - {{ timesheets[$index].week_beginning | date:'yyyy-MM-dd' }}</strong></a>
           </div>
-          <div class="col-md-4 timesheet_small_view">
-            <a ng-href='/#/timesheet/{{timesheets[$index + 1]._id}}'><strong>{{ timesheets[$index + 1].title }}</strong></a>
+          <div class="col-md-4 timesheet_small_view" ng-if="timesheets[$index + 1]">
+            <a ng-href='/#/timesheet/{{timesheets[$index + 1]._id}}'><strong>{{ timesheets[$index + 1].title }} - {{ timesheets[$index + 1].week_beginning | date:'yyyy-MM-dd' }}</strong></a>
           </div>
-          <div class="col-md-4 timesheet_small_view">
-            <a ng-href='/#/timesheet/{{timesheets[$index + 2]._id}}'><strong>{{ timesheets[$index + 2].title }}</strong></a>
+          <div class="col-md-4 timesheet_small_view" ng-if="timesheets[$index + 2]">
+            <a ng-href='/#/timesheet/{{timesheets[$index + 2]._id}}'><strong>{{ timesheets[$index + 2].title }} - {{ timesheets[$index + 2].week_beginning | date:'yyyy-MM-dd' }}</strong></a>
           </div>
           <br>
+    </div>
+  </div>
+  <div ng-if="timesheets.length == 0">
+    <div class="row">
+          <div class="col-md-12">
+            Add a new time sheet!
+          </div>
     </div>
   </div>
 </div>

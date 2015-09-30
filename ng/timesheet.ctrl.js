@@ -7,6 +7,7 @@ angular.module('app')
 
 	TimesheetSvc.fetchById($routeParams.timesheet_id).then(function(response){
       $scope.timesheet = response.data;
+      console.log($scope.timesheet);
     })
 	
 })
