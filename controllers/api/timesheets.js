@@ -38,7 +38,6 @@ router.get('/timesheets/:id', function (req, res, next) {
 })
 
 router.post('/timesheets', function (req, res, next) {
-
   User.findOne({ 'H_number': req.auth.H_number}, function(err, user){
     if (err) return next(err);
       if(user == null) {
@@ -48,10 +47,8 @@ router.post('/timesheets', function (req, res, next) {
             user_id: user.id,
             week_beginning: req.body.week_beginning,
             title: req.body.title,
+            department: req.body.department
           });
-          timesheet.week_one.sunday.date = req.body.week_one.sunday.date;
-          timesheet.week_one.monday.date = req.body.week_one.monday.date;
-          timesheet.week_one.tuesday.date = req.body.week_one.tuesday.date;
 
         timesheet.save(function(err, time_sheet){
           if (err) return next(err);

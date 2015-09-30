@@ -1,12 +1,12 @@
-<form ng-submit="createNewTimeSheet(title, week_beginning)">
-  <div class="form-group">
-    <label>Title</label>
-    <input class="form-control" type="name" ng-model="title" required>
-    <label>Week Beginning</label>
-    <input type="date" ng-model="week_beginning" />
-  </div>
-  <input class="btn btn-success btn-lg btn-block" type="submit" value="Create New Timesheet">
-</form>
+<h1 ng-if='has_current_timesheet'>Current Timesheets</h1>
+
+<input class="form-control" type="text" ng-model="title" placeholder="Title">
+<br>
+<input class="form-control" type="text" ng-model="department" placeholder="Department">
+<br>
+<input class="form-control" type="date" ng-model="week_beginning" placeholder="Week Beginning">
+<br>
+<input class="btn btn-success btn-lg btn-block" type="button" ng-click="createNewTimeSheet(title, week_beginning, department)" value="Create New Timesheet">
 
 <h1>Past Timesheets</h1>
 <div class='list-group' ng-if='currentUser' >
