@@ -1,4 +1,212 @@
-<h1>{{timesheet.title}} - {{timesheet.week_beginning | date:'yyyy-MM-dd'}}</h1>
-<br>
-{{timesheet.department}}
-<br>
+<div class="row">
+	<div class="col-md-8">
+		<h4>{{timesheet.title}} - {{timesheet.week_beginning | date:'yyyy-MM-dd'}}</h4>
+	</div>
+	<div class="col-md-2">
+		<input class="btn btn-success btn-block" type="button" value="Clock In">
+	</div>
+	<div class="col-md-2">	
+		<input class="btn btn-success btn-block" type="button" value="Clock Out">
+	</div>
+</div>
+<div class="row">
+  <div class="week col-md-12">
+  	<h4>Week 1</h4>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="timesheet_title col-xs-2">Day</div>
+      <div class="timesheet_title col-xs-1">Date</div>
+      <div class="timesheet_title col-xs-1">IN</div>
+      <div class="timesheet_title col-xs-1">OUT</div>
+      <div class="timesheet_title col-xs-1">IN</div>
+      <div class="timesheet_title col-xs-1">OUT</div>
+      <div class="timesheet_title col-xs-1">IN</div>
+      <div class="timesheet_title col-xs-1">OUT</div>
+      <div class="timesheet_title col-xs-1">Total</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Sunday</div>
+      <div class="col-xs-1">{{timesheet.week_one.sunday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.sunday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.sunday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.sunday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.sunday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.sunday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.sunday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.sunday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Monday</div>
+      <div class="col-xs-1">{{timesheet.week_one.monday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.monday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.monday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.monday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.monday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.monday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.monday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.monday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Tuesday</div>
+      <div class="col-xs-1">{{timesheet.week_one.tuesday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.tuesday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.tuesday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.tuesday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.tuesday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.tuesday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.tuesday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.tuesday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Wednesday</div>
+      <div class="col-xs-1">{{timesheet.week_one.wednesday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.wednesday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.wednesday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.wednesday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.wednesday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.wednesday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.wednesday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.wednesday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Thursday</div>
+      <div class="col-xs-1">{{timesheet.week_one.thursday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.thursday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.thursday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.thursday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.thursday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.thursday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.thursday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.thursday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Friday</div>
+      <div class="col-xs-1">{{timesheet.week_one.friday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.friday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.friday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.friday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.friday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.friday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.friday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.friday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Saturday</div>
+      <div class="col-xs-1">{{timesheet.week_one.saturday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.saturday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.saturday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.saturday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.saturday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.saturday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.saturday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_one.saturday.hours_worked}}</div>
+    </div>
+  </div>
+  <div class="week col-md-12">
+  	<h4>Week 2</h4>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="timesheet_title col-xs-2">Day</div>
+      <div class="timesheet_title col-xs-1">Date</div>
+      <div class="timesheet_title col-xs-1">IN</div>
+      <div class="timesheet_title col-xs-1">OUT</div>
+      <div class="timesheet_title col-xs-1">IN</div>
+      <div class="timesheet_title col-xs-1">OUT</div>
+      <div class="timesheet_title col-xs-1">IN</div>
+      <div class="timesheet_title col-xs-1">OUT</div>
+      <div class="timesheet_title col-xs-1">Total</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Sunday</div>
+      <div class="col-xs-1">{{timesheet.week_two.sunday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.sunday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.sunday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.sunday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.sunday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.sunday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.sunday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.sunday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Monday</div>
+      <div class="col-xs-1">{{timesheet.week_two.monday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.monday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.monday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.monday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.monday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.monday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.monday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.monday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Tuesday</div>
+      <div class="col-xs-1">{{timesheet.week_two.tuesday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.tuesday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.tuesday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.tuesday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.tuesday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.tuesday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.tuesday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.tuesday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Wednesday</div>
+      <div class="col-xs-1">{{timesheet.week_two.wednesday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.wednesday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.wednesday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.wednesday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.wednesday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.wednesday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.wednesday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.wednesday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Thursday</div>
+      <div class="col-xs-1">{{timesheet.week_two.thursday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.thursday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.thursday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.thursday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.thursday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.thursday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.thursday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.thursday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Friday</div>
+      <div class="col-xs-1">{{timesheet.week_two.friday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.friday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.friday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.friday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.friday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.friday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.friday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.friday.hours_worked}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 space"></div>
+      <div class="col-xs-2">Saturday</div>
+      <div class="col-xs-1">{{timesheet.week_two.saturday.date | date:'MM/dd'}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.saturday.col_one.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.saturday.col_one.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.saturday.col_two.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.saturday.col_two.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.saturday.col_three.in_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.saturday.col_three.out_time}}</div>
+      <div class="col-xs-1">{{timesheet.week_two.saturday.hours_worked}}</div>
+    </div>
+  </div> 
+  </div>
+</div>

@@ -32,7 +32,6 @@ angular.module('app')
 	}
 
 	TimesheetSvc.fetch().success(function (timesheets) {
-		console.log(timesheets);
 		$scope.timesheets = timesheets;
 	})
 	
