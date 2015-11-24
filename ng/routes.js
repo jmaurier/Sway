@@ -5,5 +5,6 @@ angular.module('app')
 	.when('/register', { controller: 'RegisterCtrl', templateUrl: '/templates/register.html' })
 	.when('/login',    { controller: 'LoginCtrl', templateUrl: '/templates/login.html' })
 	.when('/timesheet/:timesheet_id',{ controller: 'TimesheetCtrl', templateUrl: '/templates/timesheet.html' })
+	.when('/admin',{ controller: 'AdminCtrl', templateUrl: '/templates/admin.html'  })
 })
 

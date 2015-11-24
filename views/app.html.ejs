@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html ng-app='app'>
   <head>
-    <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/angular-toastr.css" />
-    <link href="/xeditable.css" rel="stylesheet">
-    <link rel='stylesheet' href='/app.css'>
+    <link rel='stylesheet' type="text/css" href='/app.css'>
   </head>
   <body ng-controller='ApplicationCtrl'>
     <nav class='navbar navbar-default'>
       <div class='container'>
+        
         <ul class='nav navbar-nav'>
           <li><a href='/#/'>Home</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle dropDownButton" type="button" data-toggle="dropdown">Options
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Manage Users</a></li>
+                  <li><a href="#">Manage Groups</a></li>
+                </ul>
+           </div>
+          </li>
           <li ng-if='!currentUser'><a href='/#/register'>Register</a></li>
           <li ng-if='!currentUser' ><a href='/#/login'>Login</a></li>
         </ul>
-        <ul>
-          <p ng-if='currentUser' class='navbar-text navbar-right'>
-            Signed in as {{currentUser.name}}
-          </p>
-          <p><a ng-if='currentUser' ng-click='logout()' id='logout_btn' class='navbar-text navbar-right'>Logout</a></p>  
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-if='currentUser'><a href='/#/'>Signed in as {{currentUser.name}}</a></li>
+          <li><a ng-if='currentUser' ng-click='logout()' id='logout_btn' >Logout</a></li>  
         </ul>
       </div>
     </nav>
@@ -27,7 +37,6 @@
     <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.4/angular-route.js'></script>
     <script src="/angular-toastr.tpls.js"></script>
     <script src="/ui-bootstrap-tpls-0.13.3.min.js"></script>
-    <script src="/xeditable.min.js"></script>
     <script src='/app.js'></script>
   </body>
 </html>

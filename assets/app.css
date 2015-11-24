@@ -24,12 +24,6 @@ h1 {
   margin: 0 auto;
   max-width: 80%;
 }
-.timesheetBtnGroup {
-  margin-left: 25px;
-}
-.timesheetBtnGroup .row {
-  margin-bottom: 15px;
-}
 .timesheet_small_view {
   background-clip: content-box;
 }
@@ -39,20 +33,19 @@ h1 {
   margin: 0 auto;
   max-width: 100%;
 }
-.bold {
-  font-weight: bold;
+.col-xs-1 {
+  background-color: #999;
+  border: 1px solid #000;
 }
-.gray .col-md-1 {
-  background-color: #ccc;
-}
-.gray .col-md-2 {
-  background-color: #ccc;
+.col-xs-2 {
+  background-color: #999;
+  border: 1px solid #000;
 }
 .nobd {
   border: 0px !important;
 }
 .week {
-  margin-bottom: 50px;
+  width: 40%;
   backrgound-color: #bbc;
   padding: 1em;
   border: 1px solid #aaa;
@@ -61,23 +54,42 @@ h1 {
   border: none;
   background-color: transparent;
 }
-.editLink {
-  color: #333 !important;
-}
-.editable-bstime .editable-input i.icon-chevron-up:before {
-  content: '\e113';
-}
-.editable-bstime .editable-input i.icon-chevron-down:before {
-  content: '\e114';
-}
-.editable-bstime .editable-input i.icon-chevron-up,
-.editable-bstime .editable-input i.icon-chevron-down {
+.dropDownButton {
+  border: none;
+  background-color: transparent;
+  vertical-align: center;
+  color: #777;
+  line-height: 20px;
   position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  -webkit-font-smoothing: antialiased;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
+  display: block;
+  padding: 10px 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.dropDownButton:hover {
+  border: none;
+  background-color: transparent;
+  vertical-align: center;
+  color: #777;
+  line-height: 20px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.open>.dropDownButton {
+  border: none;
+  background-color: transparent;
+  vertical-align: center;
+  color: #777;
+  line-height: 20px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.nav-txt {
+  padding-top: 0px;
 }
