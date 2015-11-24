@@ -5,6 +5,7 @@ var config = require('../../config')
 
 //Get timesheets for a specific user.
 router.get('/timesheets', function (req, res, next) {
+  console.log(req.auth);
   User.findOne({ 'H_number': req.auth.H_number}, function(err, user){
     if (err) return next(err);
       if(user == null) {
