@@ -54,3 +54,42 @@ h1 {
   border: none;
   background-color: transparent;
 }
+.dropDownButton {
+  border: none;
+  background-color: transparent;
+  vertical-align: center;
+  color: #777;
+  line-height: 20px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.dropDownButton:hover {
+  border: none;
+  background-color: transparent;
+  vertical-align: center;
+  color: #777;
+  line-height: 20px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.open>.dropDownButton {
+  border: none;
+  background-color: transparent;
+  vertical-align: center;
+  color: #777;
+  line-height: 20px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.nav-txt {
+  padding-top: 0px;
+}
