@@ -5,6 +5,14 @@ angular.module('app')
 		$location.path('/login')
 	}
 
+	$scope.clockin = function(){
+		
+	}
+
+	$scope.clockout = function(){
+		
+	}
+
 	TimesheetSvc.fetchById($routeParams.timesheet_id).then(function(response){
       $scope.timesheet = response.data;
       console.log($scope.timesheet);
