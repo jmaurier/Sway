@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('DashboardCtrl', function ($scope, $location, UserSvc, TimesheetSvc, toastr, ModalService) {
+.controller('DashboardCtrl', function ($scope, $location, UserSvc, TimesheetSvc, toastr) {
 
 	if(!UserSvc.isLoggedIn()){
 		$location.path('/login')
