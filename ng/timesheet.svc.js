@@ -9,6 +9,10 @@ angular.module('app')
     return $http.get('/api/timesheets/' + id)
   }
 
+  this.deleteById = function(id){
+  	return $http.delete('/api/timesheets/' + id)
+  }
+
   this.create = function(timesheet){
     return $http.post('/api/timesheets', timesheet);
   }

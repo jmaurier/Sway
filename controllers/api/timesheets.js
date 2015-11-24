@@ -38,6 +38,20 @@ router.get('/timesheets/:id', function (req, res, next) {
   })
 })
 
+//delete a timesheet by id
+router.delete('/timesheets/:id', function (req, res, next) {
+  TimeSheet.findById(req.params.id, function(err, timesheet) {
+    if (err) return next(err);
+    if(timesheet == null) {
+      res.status(404).json({message: 'Time sheet not found.'});
+    } else {
+      timesheet.remove(function(){
+        res.status(200).json({message: 'Time sheet deleted successfully.'});
+      })
+    }
+  })
+})
+
 //create new timesheet
 router.post('/timesheets', function (req, res, next) {
   User.findOne({ 'H_number': req.auth.H_number}, function(err, user){

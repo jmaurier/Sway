@@ -14,8 +14,16 @@ angular.module('app')
 	}
 
 	TimesheetSvc.fetchById($routeParams.timesheet_id).then(function(response){
-      $scope.timesheet = response.data;
-      console.log($scope.timesheet);
+		$scope.timesheet = response.data;
+		console.log($scope.timesheet);
     })
+
+    $scope.deleteTimesheet = function() {
+    	var timeSheetId = $routeParams.timesheet_id;
+    	TimesheetSvc.deleteById(timeSheetId).then(function(response){
+    		toastr.success(response.data.message);
+    		$location.path('/');
+    	});
+    }
 	
 })

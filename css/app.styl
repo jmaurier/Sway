@@ -10,7 +10,7 @@ h1
 /*LogIn*/
 #textForm {
 	max-width: 50%;
-  	margin: auto;
+  margin: auto;
 }
 
 .ng-invalid {
@@ -28,6 +28,14 @@ h1
 	max-width: 80%;
 }
 
+.timesheetBtnGroup{
+  margin-left: 25px;
+}
+
+.timesheetBtnGroup .row{
+  margin-bottom: 15px;
+}
+
 .timesheet_small_view{
 	background-clip: content-box;
 	
@@ -40,19 +48,23 @@ h1
 	max-width: 100%;
 }
 
-.col-xs-1{
-  background-color: #999;
-  border: 1px solid black;
+.bold{
+  font-weight: bold;
 }
-.col-xs-2{
-  background-color: #999;
-  border: 1px solid black;
+
+.gray .col-md-1{
+  background-color:#CCC;
 }
+
+.gray .col-md-2{
+  background-color:#CCC;
+}
+
 .nobd{
   border: 0px !important;
 }
 .week{
-  width: 40%;
+  margin-bottom: 50px;
   backrgound-color: #BBBBCC;
   padding: 1em;
   border: 1px solid #AAA;
@@ -60,4 +72,27 @@ h1
 .space{
   border:none;
   background-color: transparent;
+}
+
+.editLink{
+  color: #333 !important;
+}
+
+
+.editable-bstime .editable-input i.icon-chevron-up:before {
+  content: '\e113';
+}
+.editable-bstime .editable-input i.icon-chevron-down:before {
+  content: '\e114';
+}
+.editable-bstime .editable-input i.icon-chevron-up,
+.editable-bstime .editable-input i.icon-chevron-down {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
 }

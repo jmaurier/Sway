@@ -1,204 +1,537 @@
 <h1>{{timesheet.title}} - {{timesheet.week_beginning | date:'yyyy-MM-dd'}}</h1>
 <br>
-{{timesheet.department}}
-<br>
 
 <div class="row">
-  <div class="week col-md-6 col-xs-12">
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Day</div>
-      <div class="col-xs-1">Date</div>
-      <div class="col-xs-1">IN</div>
-      <div class="col-xs-1">OUT</div>
-      <div class="col-xs-1">IN</div>
-      <div class="col-xs-1">OUT</div>
-      <div class="col-xs-1">IN</div>
-      <div class="col-xs-1">OUT</div>
-      <div class="col-xs-1">Total</div>
+  <div class="week col-md-10 well">
+    <h3>Week 1</h3>
+    <div class="row bold gray">
+      <div class="col-md-2 col-md-offset-1">Day</div>
+      <div class="col-md-1">Date</div>
+      <div class="col-md-1">IN</div>
+      <div class="col-md-1">OUT</div>
+      <div class="col-md-1">IN</div>
+      <div class="col-md-1">OUT</div>
+      <div class="col-md-1">IN</div>
+      <div class="col-md-1">OUT</div>
+      <div class="col-md-1">Total</div>
     </div>
     <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Sunday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Monday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Tuesday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Wednesday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Thursday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Friday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Saturday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
+      <div class="col-md-2 col-md-offset-1">Sunday</div>
+      <div class="col-md-1">{{timesheet.week_one.sunday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.sunday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.sunday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.sunday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.sunday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.sunday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.sunday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.sunday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.sunday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.sunday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.sunday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.sunday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.sunday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_one.sunday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Monday</div>
+      <div class="col-md-1">{{timesheet.week_one.monday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.monday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.monday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.monday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.monday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.monday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.monday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.monday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.monday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.monday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.monday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.monday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.monday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_one.monday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Tuesday</div>
+      <div class="col-md-1">{{timesheet.week_one.tuesday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.tuesday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.tuesday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.tuesday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.tuesday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.tuesday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.tuesday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.tuesday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.tuesday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.tuesday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.tuesday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.tuesday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.tuesday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_one.tuesday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Wednesday</div>
+      <div class="col-md-1">{{timesheet.week_one.wednesday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.wednesday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.wednesday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.wednesday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.wednesday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.wednesday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.wednesday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.wednesday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.wednesday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.wednesday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.wednesday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.wednesday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.wednesday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_one.wednesday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Thursday</div>
+      <div class="col-md-1">{{timesheet.week_one.thursday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.thursday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.thursday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.thursday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.thursday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.thursday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.thursday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.thursday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.thursday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.thursday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.thursday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.thursday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.thursday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_one.thursday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Friday</div>
+      <div class="col-md-1">{{timesheet.week_one.friday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.friday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.friday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.friday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.friday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.friday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.friday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.friday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.friday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.friday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.friday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.friday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.friday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_one.friday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Saturday</div>
+      <div class="col-md-1">{{timesheet.week_one.saturday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.saturday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.saturday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.saturday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.saturday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.saturday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.saturday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.saturday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.saturday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.saturday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.saturday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_one.saturday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_one.saturday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_one.saturday.hours_worked}}</div>
     </div>
   </div>
-  <div class="week col-md-6 col-xs-12">
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Day</div>
-      <div class="col-xs-1">Date</div>
-      <div class="col-xs-1">IN</div>
-      <div class="col-xs-1">OUT</div>
-      <div class="col-xs-1">IN</div>
-      <div class="col-xs-1">OUT</div>
-      <div class="col-xs-1">IN</div>
-      <div class="col-xs-1">OUT</div>
-      <div class="col-xs-1">Total</div>
+  <div class="col-md-2">
+    <div class="timesheetBtnGroup">
+      <div class="row">
+        <input type="button" value="Clock In" class="btn-block btn btn-success">
+      </div>
+      <div class="row">
+        <input type="button" value="Clock Out" class="btn-block btn btn-success">
+      </div>
+      <div class="row">
+        <input type="button" value="Delete" class="btn-block btn btn-danger" ng-click="deleteTimesheet()">
+      </div>
+    </div>
+  </div>
+  
+  <div class="week col-md-10 well">
+    <h3>Week 2</h3>
+    <div class="row bold gray">
+      <div class="col-md-2 col-md-offset-1">Day</div>
+      <div class="col-md-1">Date</div>
+      <div class="col-md-1">IN</div>
+      <div class="col-md-1">OUT</div>
+      <div class="col-md-1">IN</div>
+      <div class="col-md-1">OUT</div>
+      <div class="col-md-1">IN</div>
+      <div class="col-md-1">OUT</div>
+      <div class="col-md-1">Total</div>
     </div>
     <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Sunday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
+      <div class="col-md-2 col-md-offset-1">Sunday</div>
+      <div class="col-md-1">{{timesheet.week_two.sunday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.sunday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.sunday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.sunday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.sunday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.sunday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.sunday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.sunday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.sunday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.sunday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.sunday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.sunday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.sunday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_two.sunday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Monday</div>
+      <div class="col-md-1">{{timesheet.week_two.monday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.monday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.monday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.monday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.monday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.monday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.monday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.monday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.monday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.monday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.monday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.monday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.monday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_two.monday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Tuesday</div>
+      <div class="col-md-1">{{timesheet.week_two.tuesday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.tuesday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.tuesday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.tuesday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.tuesday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.tuesday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.tuesday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.tuesday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.tuesday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.tuesday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.tuesday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.tuesday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.tuesday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_two.tuesday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Wednesday</div>
+      <div class="col-md-1">{{timesheet.week_two.wednesday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.wednesday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.wednesday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.wednesday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.wednesday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.wednesday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.wednesday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.wednesday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.wednesday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.wednesday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.wednesday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.wednesday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.wednesday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_two.wednesday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Thursday</div>
+      <div class="col-md-1">{{timesheet.week_two.thursday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.thursday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.thursday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.thursday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.thursday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.thursday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.thursday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.thursday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.thursday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.thursday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.thursday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.thursday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.thursday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_two.thursday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Friday</div>
+      <div class="col-md-1">{{timesheet.week_two.friday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.friday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.friday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.friday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.friday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.friday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.friday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.friday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.friday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.friday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.friday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.friday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.friday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_two.friday.hours_worked}}</div>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-1">Saturday</div>
+      <div class="col-md-1">{{timesheet.week_two.saturday.date | date:'MM-dd'}}</div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.saturday.col_one.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.saturday.col_one.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.saturday.col_one.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.saturday.col_one.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.saturday.col_two.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.saturday.col_two.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.saturday.col_two.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.saturday.col_two.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.saturday.col_three.in_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.saturday.col_three.in_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="editLink" editable-bstime="timesheet.week_two.saturday.col_three.out_time" e-show-meridian="false" e-minute-step="10">
+          {{timesheet.week_two.saturday.col_three.out_time || '0:00'}}
+        </a>
+      </div>
+      <div class="col-md-1">{{timesheet.week_two.saturday.hours_worked}}</div>
     </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Monday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Tuesday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Wednesday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Thursday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Friday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-1 space"></div>
-      <div class="col-xs-2">Saturday</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-      <div class="col-xs-1">date</div>
-    </div>
-  </div> 
   </div>
 </div>

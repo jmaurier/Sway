@@ -6,14 +6,12 @@ angular.module('app')
 	}
 
 	$scope.createNewTimeSheet = function(title, week_beginning){
-		var tempDate = new Date(week_beginning.getFullYear(), week_beginning.getMonth(), week_beginning.getDate() + 1)
-		if(tempDate === week_beginning)
-	  		console.log(tempDate);
+		console.log(new Date(week_beginning.getFullYear(), week_beginning.getMonth(), week_beginning.getDate()));
 	  TimesheetSvc.create({
         title: title,
         week_beginning: week_beginning,
         week_one:{
-        	sunday:{date:Date(week_beginning.getFullYear(), week_beginning.getMonth(), week_beginning.getDate() + 5) },
+        	sunday:{date:new Date(week_beginning.getFullYear(), week_beginning.getMonth(), week_beginning.getDate()) },
 	        monday:{date:new Date(week_beginning.getFullYear(), week_beginning.getMonth(), week_beginning.getDate() + 1)},
 	        tuesday:{date:new Date(week_beginning.getFullYear(), week_beginning.getMonth(), week_beginning.getDate() + 2)},
 	        wednesday:{date:new Date(week_beginning.getFullYear(), week_beginning.getMonth(), week_beginning.getDate() + 3)},
